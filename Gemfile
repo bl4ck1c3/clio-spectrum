@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 # FIXED:  Can't move up to 4.0 series yet - blacklight_range_limit has dependency on 3
 # but, devise_wind still has Rails 3.2 dependencies.
-gem 'rails', '~> 3.2'
+gem 'rails', '~> 4.0'
 
 #  ###  BLACKLIGHT (begin)  ###
 
@@ -97,9 +97,9 @@ gem 'cancan'
 # RecordMailer uses partials that do fragment caching... but somehow
 # this just doesn't work in stock rails.
 # 3/15
-gem 'caching_mailer'
+# gem 'caching_mailer'
 # # Here's one that's supposed to work for Rails 4.
-# gem 'mailer_fragment_caching'
+gem 'mailer_fragment_caching'
 
 gem 'exception_notification'
 gem 'net-ldap'
