@@ -8,9 +8,8 @@ Clio::Application.configure do
 
   config.cache_classes = !(ENV['DRB'] == 'true')
 
-  # # deprecated in rails 4
-  # # Log error messages when you accidentally call methods on nil.
-  # config.whiny_nils = true
+  # Log error messages when you accidentally call methods on nil.
+  config.whiny_nils = true
 
   # Show full error reports and disable caching
   config.consider_all_requests_local       = true
@@ -37,8 +36,4 @@ Clio::Application.configure do
 
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
-
-  # rails 4
-  config.eager_load = false
-
 end

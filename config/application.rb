@@ -6,8 +6,6 @@ require 'rails/all'
 # If you have a Gemfile, require the gems listed there, including any gems
 # you've limited to :test, :development, or :production.
 
-# Rails 4 - remove
-# require 'rspec-expectations' if Rails.env == 'test'
 if defined?(Bundler)
   Bundler.require *Rails.groups(assets: %w(development test))
 end

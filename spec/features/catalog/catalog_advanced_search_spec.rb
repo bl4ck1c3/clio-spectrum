@@ -12,10 +12,11 @@ describe 'Catalog Advanced Search' do
     within('li.datasource_link[source="catalog"]') do
       click_link('Catalog')
     end
-    expect(page).to have_css('#catalog_q')
 
+    expect(page).to have_css('#catalog_q')
     find('.search_box.catalog .advanced_search_toggle').click
     expect(page).to have_css('.landing_page.catalog .advanced_search')
+
     within '.landing_page.catalog .advanced_search' do
       select('Journal Title', from: 'adv_1_field')
       fill_in 'adv_1_value', with: search_text

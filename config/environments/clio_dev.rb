@@ -4,9 +4,8 @@ Clio::Application.configure do
 
   config.cache_classes = true
 
-  # # deprecated in rails 4
-  # # Log error messages when you accidentally call methods on nil.
-  # config.whiny_nils = true
+  # Log error messages when you accidentally call methods on nil.
+  config.whiny_nils = true
 
   # if we consider them "local" we spew errors to the browser
   config.consider_all_requests_local       = false
@@ -38,9 +37,6 @@ Clio::Application.configure do
 
   # Only use best-standards-support built into browsers
   config.action_dispatch.best_standards_support = :builtin
-
-  # rails 4
-  config.eager_load = true
 end
 
 # Exception Notifier - Upgrading to 4.x version

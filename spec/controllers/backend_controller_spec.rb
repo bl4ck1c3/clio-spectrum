@@ -71,17 +71,31 @@ describe BackendController do
   end
 
 
-  it "should refuse to route without an ID filled in" do
+  it "should return nothing for blank/nil/undef ids" do
 
-    expect {
-      # nil
-      get 'holdings', :id => nil
-    }.to raise_error(ActionController::RoutingError)
+    get 'holdings', id: ''
+    expect(response).to be_success
+    expect(response.body.strip).to be_empty
 
-    expect {
-      # nil
-      get 'holdings'
-    }.to raise_error(ActionController::RoutingError)
+    get 'holdings', id: nil
+    expect(response).to be_success
+    expect(response.body.strip).to be_empty
+
+    get 'holdings'
+    expect(response).to be_success
+    expect(response.body.strip).to be_empty
+
+
+    # "should refuse to route without an ID filled in"
+    # expect {
+    #   # nil
+    #   get 'holdings', :id => nil
+    # }.to raise_error(ActionController::RoutingError)
+    # 
+    # expect {
+    #   # nil
+    #   get 'holdings'
+    # }.to raise_error(ActionController::RoutingError)
 
   end
 

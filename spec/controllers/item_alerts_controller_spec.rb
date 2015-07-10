@@ -143,6 +143,9 @@ describe ItemAlertsController do
 
       # item_alert = JSON.parse(response.body)['item_alert']
       item_alert = JSON.parse(response.body)
+      
+      expect(item_alert).not_to be_nil
+      expect(item_alert['id']).to be_an(Integer)
 
       # fetch it back again, as html table row
       get :show_table_row, id: item_alert['id']

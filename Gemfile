@@ -2,23 +2,7 @@ source 'https://rubygems.org'
 
 # FIXED:  Can't move up to 4.0 series yet - blacklight_range_limit has dependency on 3
 # but, devise_wind still has Rails 3.2 dependencies.
-# 3/15
-# gem 'rails', '~> 3.2'
 gem 'rails', '~> 4.0'
-
-# `attr_accessible` is extracted out of Rails into a gem. Please use new 
-# recommended protection model for params(strong_parameters) or add 
-# `protected_attributes` to your Gemfile to use old one. 
-# Oops, Blacklight has "logic that assumes protected_attributes is Rails 3 only" 
-#   see:  https://github.com/projectblacklight/blacklight/issues/906
-# Does this mean that including this gem breaks things?
-# gem 'protected_attributes'
-# Yes, it does, we get the behavior explained in issue 906.
-# OK, bite the bullet and convert to strong_parameters everywhere.
-
-# `ActiveRecord::SessionStore` is extracted out of Rails into a gem. 
-# Please add `activerecord-session_store` to your Gemfile to use it.
-gem 'activerecord-session_store'
 
 #  ###  BLACKLIGHT (begin)  ###
 
@@ -44,9 +28,9 @@ gem 'kaminari'
 # pull from rubygems...
 # gem 'devise_wind'
 # Local copy relaxes rails version requirements (allows 4.x)
-gem "devise_wind", :path => "/Users/marquis/src/devise_wind"
+# gem "devise_wind", :path => "/Users/marquis/src/devise_wind"
 # New branch to recover from when CUIT broke wind
-# gem "devise_wind", :git => 'git://github.com/cul/devise_wind.git', :branch => 'broke_wind'
+gem "devise_wind", :git => 'git://github.com/cul/devise_wind.git', :branch => 'broke_wind'
 
 
 # Not being used, turn it off.
@@ -80,7 +64,7 @@ end
 # locally developed - and no longer on Github...
 # should try to eliminate at some point.
 # 3/15, moved to local library code
-# gem 'has_options'
+gem 'has_options'
 
 gem 'therubyracer'
 gem 'httpclient'
@@ -114,7 +98,7 @@ gem 'cancan'
 # this just doesn't work in stock rails.
 # 3/15
 # gem 'caching_mailer'
-# Here's one that's supposed to work for Rails 4.
+# # Here's one that's supposed to work for Rails 4.
 gem 'mailer_fragment_caching'
 
 gem 'exception_notification'
@@ -162,11 +146,11 @@ gem 'rack-attack'
 group :development do
 
   # Deploy with Capistrano
-  gem 'capistrano', '~>2'
-  gem 'capistrano-ext'
+  gem 'capistrano', '~>2', require: false
+  gem 'capistrano-ext', require: false
   gem 'quiet_assets'
   # fixes [morrison.cul.columbia.edu] sh: bundle: command not found
-  gem 'rvm-capistrano'
+  gem 'rvm-capistrano', :require => false
 
   # browser-based live debugger and REPL
   # http://railscasts.com/episodes/402-better-errors-railspanel

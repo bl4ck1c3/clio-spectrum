@@ -79,7 +79,7 @@ describe 'Catalog Interface' do
     # visit this specific item
     visit catalog_path('513297')
     expect(page).to have_css('.holdings-container .holdings #clio_holdings')
-    expect(page).to have_css('.holdings-container .holdings #google_holdings')
+    expect(page).to have_css('.holdings-container .holdings #google_holdings', wait: 3)
     expect(page).to have_css('.holdings-container .holdings #hathi_holdings', wait: 3)
 
     # Should see the 'Full View' message in the Hathi Holdings box
@@ -240,6 +240,7 @@ describe 'Catalog Interface' do
     expect(page).to have_css('div.debug_instruction')
     expect(page).to have_css('div.debug_entries')
     expect(find('.debug_instruction')).to have_text('Debug mode is on. Turn it off')
+
     within('div.debug_instruction') do
       click_link 'off'
     end

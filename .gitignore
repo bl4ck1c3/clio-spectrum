@@ -1,8 +1,12 @@
 config/database.yml
 config/app_config.yml
 config/solr.yml
+<<<<<<< HEAD
 config/secrets.yml
 config/initializers/secret_token.rb
+=======
+config/blacklight.yml
+>>>>>>> origin/rails4
 config/*.sphinx.conf
 config/s3_credentials.yml
 config/initializers/computer_specific_config.rb
