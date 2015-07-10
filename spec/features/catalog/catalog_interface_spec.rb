@@ -101,9 +101,9 @@ describe 'Catalog Interface' do
     visit catalog_path('382300')
 
     # within CLIO HOLDINGS, not the regular Online div...
-    # ...should see an 'Online' block
+    # ... should see an 'Online' block
     expect(find('div#clio_holdings')).to have_content('Online')
-    # ...should see the specific URL...
+    # ... should see the specific URL...
     expect(find('div#clio_holdings')).to have_content('http://www.neighborhoodpreservationcenter.org/')
 
     # And, contrariwise, other Avery Online material, which does not have
@@ -115,7 +115,7 @@ describe 'Catalog Interface' do
     expect(find('div#online_holdings')).to have_content('Online')
 
     # within CLIO HOLDINGS, should NOT see an 'Online' block
-    # find('div#clio_holdings').should_not have_content("Online")
+    # expect(find('div#clio_holdings')).not_to have_content("Online")
     # Now, Online-Only items no longer have any CLIO Holdings div at all!
     expect(page).to have_no_selector('div#clio_holdings')
 

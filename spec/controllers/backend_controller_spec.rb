@@ -68,20 +68,25 @@ describe BackendController do
     expect(response).to be_success
     expect(response.body.strip).to be_empty
 
+    # Empty holdings value
+    get 'holdings', :id => ''
+    expect(response).to be_success
+    expect(response.body.strip).to be_empty
+
   end
 
 
-  it "should refuse to route without an ID filled in" do
+  it "should throw exception for nil or missing ID" do
 
     expect {
       # nil
       get 'holdings', :id => nil
-    }.to raise_error(ActionController::RoutingError)
+    }.to raise_error(ActionController::UrlGenerationError)
 
     expect {
       # nil
       get 'holdings'
-    }.to raise_error(ActionController::RoutingError)
+    }.to raise_error(ActionController::UrlGenerationError)
 
   end
 

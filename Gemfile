@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 # but, devise_wind still has Rails 3.2 dependencies.
 # 3/15
 # gem 'rails', '~> 3.2'
-gem 'rails', '~> 4.0'
+gem 'rails', '~> 4.1.0'
 
 # `attr_accessible` is extracted out of Rails into a gem. Please use new 
 # recommended protection model for params(strong_parameters) or add 
@@ -44,9 +44,9 @@ gem 'kaminari'
 # pull from rubygems...
 # gem 'devise_wind'
 # Local copy relaxes rails version requirements (allows 4.x)
-gem "devise_wind", :path => "/Users/marquis/src/devise_wind"
+# gem "devise_wind", :path => "/Users/marquis/src/devise_wind"
 # New branch to recover from when CUIT broke wind
-# gem "devise_wind", :git => 'git://github.com/cul/devise_wind.git', :branch => 'broke_wind'
+gem "devise_wind", :git => 'git://github.com/cul/devise_wind.git', :branch => 'broke_wind'
 
 
 # Not being used, turn it off.
