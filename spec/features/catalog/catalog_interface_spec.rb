@@ -73,8 +73,6 @@ describe 'Catalog Interface' do
   #  Full View examples:  513297, 1862548, 2081553
   #  Limited examples:  70744 (?), 4043762, 2517624
   it "Should show CLIO, Google, and 'Full' & 'Limited' Hathi Trust links", js: true do
-    page.driver.allow_url("hathitrust.org")
-    page.driver.allow_url("books.google.com")
 
     # visit this specific item
     visit catalog_path('513297')
